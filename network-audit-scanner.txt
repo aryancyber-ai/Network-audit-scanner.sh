@@ -1,0 +1,50 @@
+  GNU nano 8.7.1                                                                                                                                             audit.sh *                                                                                                                                                    
+#!/bin/bash
+
+echo "=================================="
+echo "   LINUX SECURITY AUDIT TOOL"
+echo "=================================="
+
+echo ""
+read -p "Enter Target IP: " target
+
+# Ping Check
+echo ""
+echo "[+] Checking Host Availability"
+ping -c 2 $target
+
+# Hostname Lookup
+echo ""
+echo "[+] Hostname Information"
+nslookup $target
+
+# Traceroute
+echo ""
+echo "[+] Network Route"
+traceroute $target
+
+# Open Ports
+echo ""
+echo "[+] Open Ports Scan"
+nmap $target
+
+# Service Detection
+echo ""
+echo "[+] Service Detection"
+nmap -sV $target
+
+# Firewall Detection
+echo ""
+echo "[+] Firewall Detection"
+nmap -sA $target
+
+# OS Detection
+echo ""
+echo "[+] OS Detection"
+sudo nmap -O $target
+
+echo ""
+echo "=================================="
+echo "         SCAN COMPLETED"
+echo "=================================="
+
