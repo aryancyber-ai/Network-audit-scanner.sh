@@ -1,4 +1,4 @@
-# Linux System Audit Tool
+# network-audit-scanner.sh
 
 A Bash-based cybersecurity and system administration tool that collects important Linux system information for security auditing and troubleshooting.
 
